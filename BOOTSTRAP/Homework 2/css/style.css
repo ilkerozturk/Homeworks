@@ -4,14 +4,28 @@
   color: gray;
   background-position: 40%;
   background-size: 6%;
+  
 }
 
+.input { 
+  background-image:url(../img/search.png);
+  background-position:center left;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position-x: 5px;
+  
+}
+.resizedTextbox{
+  padding-inline-start: 30px;
+  
+}
 input.empty {
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
     background-color: #FAFAFA;
+    
 }
 
 .postuserfont {
@@ -56,6 +70,7 @@ div.aligntop{
   padding: 0px 0;
   text-align: center;
   width: 100%;
+  
  
 
 }
@@ -69,5 +84,22 @@ ul>li{
 
     -webkit-box-shadow: 0px 2px 15px -3px rgba(0,0,0,0.5); 
     box-shadow: 0px 2px 15px -3px rgba(0,0,0,0.5);
+    height: 54px;
     
+}
+.card-header{
+  background-color: white;
+}
+.card-footer{
+  background-color: white;
+}
+div.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 90px;
+}
+body{
+  background-color:rgba(var(--b3f,250,250,250),1);
+  width: 100%;
+  height: 100%;
 }
