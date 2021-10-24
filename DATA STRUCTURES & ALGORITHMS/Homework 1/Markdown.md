@@ -1,4 +1,4 @@
-#ANSWER 1
+# ANSWER 1
 
 ######[22,27,16,2,18,6] first step is sorthing
 
@@ -13,12 +13,12 @@ We can calculate big o notation like this
 
 n*(n+1)/2 = (n2+n)/2
 
-#ANSWER 2
+# ANSWER 2
 
 ######
 Big O notation is O(n2)
 
-#ANSWER 4
+# ANSWER 4
 
 Time Complexity is considering as Average Case. 
 
