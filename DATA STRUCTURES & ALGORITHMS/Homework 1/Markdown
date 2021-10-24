@@ -7,9 +7,11 @@
 ***[2,6,16,18,22,27]
 
 ######
-There are some process that is realized n+(n-1)+(n-2)+1
+Process that is realized n+(n-1)+(n-2)+1
 
-We can calculate this n*(n+1)/2 = (n2+n)/2
+We can calculate big o notation like this 
+
+n*(n+1)/2 = (n2+n)/2
 
 #ANSWER 2
 
