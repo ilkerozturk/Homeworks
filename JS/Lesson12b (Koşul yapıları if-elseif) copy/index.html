@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+    <style> 
+      #main {
+        width: 400px;
+        height: 300px;
+        border: 0px solid #c3c3c3;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+      #main div.box1 {
+        width: 200px;
+        height: 100px;
+        text-align: center;
+        font-size: 24px;
+      }
+      #main div.box2 {
+        width: 200px;
+        height: 100px;
+        text-align: center;
+      }
+      #main div.box3 {
+        width: 400px;
+        height: 60px;
+        text-align: center;
+      }
+      #main div.box4 {
+        width: 400px;
+        height: 30px;
+        text-align: center;
+      }
+      h2{
+        text-align: center;
+        color: gray;
+      }
+      p{
+        margin-top: 38px;
+        margin-bottom: 38px;
+        color: rgb(87, 86, 86);
+      }
+      input{
+        margin-top: 42px;
+        margin-bottom: 42px;
+        color: rgb(87, 86, 86);
+      }
+      button{
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      #sonuc{
+        margin-top: 5px;
+        margin-bottom: 50px;
+      }
+      </style>
+
+</head>
+<body>
+
+
+  <h2 id="header"></h2>
+  <div id="main">
+    <div class="box1" style="background-color:rgb(233, 233, 233);">
+      <p>Kilonuz (kg): </p>
+    </div>
+    <div class="box2" style="background-color:rgb(187, 188, 189);">
+      <input name="textbox1" type="text" id="kilo">
+    </div>
+    <div class="box1" style="background-color:rgb(187, 188, 189);">
+      <p>Boyunuz (cm): </p>
+    </div>
+    <div class="box2" style="background-color:rgb(233, 233, 233);">
+      <input name="textbox2" type="text" id="boy">
+    </div>
+    <div class="box3" style="background-color:rgb(223, 223, 223);">
+      <button type="button" onclick=hesapla()>Endeksi Hesapla</button>
+    </div>
+    <div class="box4" style="background-color:rgb(194, 194, 194);">
+      <p id="sonuc"></p>
+    </div>
+  
+  </div>
+
+<!--
+
+Öğrencinin vize notunun %30'unu final notunun %70'ini alalım.
+Vize ve final notunun toplamından doğan not ortalaması eğer 0-30 aralığındaysa KALDINIZ (FF) yazdıralım.
+31-49 aralığındaysa DC - KOŞULLU yazdıralım.
+50- 84 aralığındaysa CC - GEÇTİNİZ! yazdıralım.
+85-100 aralığındaysa Notunuz AA yazdıralım.
+--> 
+
+<!-- Koşul Yapıları if-Elseif ile Vücut Kitle Endeksi Hesaplama -->
+<script>
+  document.querySelector('#title').innerHTML = "Vücut Kitle Endeksi Hesaplama";
+  document.querySelector('#header').innerHTML = "Vücut Kitle Endeksi Hesaplama";
+
+  function hesapla(){
+    var kilo = Number(document.querySelector("#kilo").value);
+    var boy = Number(((document.querySelector("#boy").value)/100) ** 2);
+    let vki; 
+    vki = kilo/boy;
+    vki = vki.toFixed(1);
+    var stil = document.querySelector("#sonuc").style;
+    
+    if (vki<18.5){
+      stil.color = "blue";
+      stil.fontSize = "14px";
+      document.querySelector("#sonuc").innerHTML = "VKI indeksi: " + vki + " Düşük Değer! (ZAYIF)";
+    }
+    else if (vki>=18.8 && vki<=24.9){
+      stil.color = "green";
+      stil.fontSize = "14px";
+      document.querySelector("#sonuc").innerHTML = "VKI indeksi: " + vki + " Normal Değer! (ORTALAMA)";
+    }
+    else if (vki>=25.0 && vki<=29.9){
+      stil.color = "purple";
+      stil.fontSize = "14px";
+      document.querySelector("#sonuc").innerHTML = "VKI indeksi: " + vki + " Yüksek Değer! (KİLOLU)";
+    }
+    else if (vki>=30.0){
+      stil.color = "red";
+      stil.fontSize = "14px";
+      document.querySelector("#sonuc").innerHTML = "VKI indeksi: " + vki + " Yüksek Değer! (AŞIRI KİLOLU)";
+    }
+    setTimeout (()=> {location.reload();},6000)
+  }
+
+
+    
+
+
+</script>
+
+
+</body>
+</html>

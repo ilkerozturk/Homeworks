@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+    <style>
+        .renk{
+            color: blue;
+            background-color: yellow;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+  <p id="class"></p>
+
+  <br>
+  <br>
+  <button type="button" onclick="renkDegistir()">Renk Değiştir</button>
+
+
+    <script>
+        document.querySelector('#title').innerHTML = 'DOM elementinin class bilgisini değiştirme - ekleme - çıkartma';
+        document.querySelector('#class').innerHTML = 'DOM elementinin class bilgisini değiştirme - ekleme - çıkartma';
+        let stil = document.querySelector('#class');
+        stil.classList.add("font","size");
+        
+        
+        function renkDegistir(){
+            stil.classList.toggle("renk");
+        }
+        
+    </script>
+
+</body>
+</html>

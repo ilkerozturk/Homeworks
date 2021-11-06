@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+</head>
+<body>
+    <h1 id="baslik"></h1>
+    <p id="bilgi"></p>
+
+    <script>
+        let title = document.getElementById('title').innerHTML='Prompt ile bilgi alma'
+        let baslik = document.getElementById('baslik').innerHTML='Prompt Fonksiyonu ile bilgi alma işlemi.'
+        let fullName = prompt('Lütfen Adınızı Giriniz.')
+        let bilgi = document.getElementById('bilgi').innerHTML = `
+        Merhaba ${fullName} Sitemize Hoşgeldin!`
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="title"></title>
+</head>
+<body>
+  <p id="header"></p>
+  <p id='print'></p>
+
+  <script>
+    let title = document.querySelector('#title')
+      title.innerHTML = "Koşul yapıları - Ternary (Üç Terimli)";
+    let header = document.querySelector('#header')
+      header.innerHTML = "Koşul yapıları - Ternary (Üç Terimli)";
+    
+    let printt = document.querySelector('#print');
+
+      //TERNARY SYNTAX => koşul?geçerli:geçersiz
+
+      let isim = 'Ediz';
+      
+      let check = (isim === 'Ediz')?`Hoşgeldin  ${isim}`: "Geçersiz";
+        
+      document.querySelector('#print').innerHTML = check;
+
+
+
+
+      
+
+      
+
+        
+
+
+
+      
+     
+  </script>
+</body>
+</html>

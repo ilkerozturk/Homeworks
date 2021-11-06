@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+    <style> 
+      #main {
+        width: 400px;
+        height: 300px;
+        border: 0px solid #c3c3c3;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+      #main div.box1 {
+        width: 200px;
+        height: 100px;
+        text-align: center;
+        font-size: 24px;
+      }
+      #main div.box2 {
+        width: 200px;
+        height: 100px;
+        text-align: center;
+      }
+      #main div.box3 {
+        width: 400px;
+        height: 60px;
+        text-align: center;
+      }
+      #main div.box4 {
+        width: 400px;
+        height: 30px;
+        text-align: center;
+      }
+      h2{
+        text-align: center;
+        color: gray;
+      }
+      p{
+        margin-top: 38px;
+        margin-bottom: 38px;
+        color: rgb(87, 86, 86);
+      }
+      input{
+        margin-top: 42px;
+        margin-bottom: 42px;
+        color: rgb(87, 86, 86);
+      }
+      button{
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      #sonuc{
+        margin-top: 5px;
+        margin-bottom: 50px;
+      }
+      </style>
+
+</head>
+<body>
+
+
+  <h2>Bilgisayarın Random Tuttuğu Sayıyı Tahmin Etmek</h2>
+  <div id="main">
+    <div class="box1" style="background-color:rgb(233, 233, 233);">
+      <p>Tahmininiz Giriniz: </p>
+    </div>
+    <div class="box2" style="background-color:rgb(187, 188, 189);">
+      <input name="textbox1" type="text" id="tahmin">
+    </div>
+    <div class="box3" style="background-color:rgb(223, 223, 223);">
+      <button type="button" onclick=tahminet()>Tahmin Et</button>
+    </div>
+    <div class="box4" style="background-color:rgb(194, 194, 194);">
+      <p id="sonuc"></p>
+    </div>
+  
+  </div>
+
+<!--
+
+Öğrencinin vize notunun %30'unu final notunun %70'ini alalım.
+Vize ve final notunun toplamından doğan not ortalaması eğer 0-30 aralığındaysa KALDINIZ (FF) yazdıralım.
+31-49 aralığındaysa DC - KOŞULLU yazdıralım.
+50- 84 aralığındaysa CC - GEÇTİNİZ! yazdıralım.
+85-100 aralığındaysa Notunuz AA yazdıralım.
+--> 
+
+<!-- Koşul Yapıları if-Elseif ile Bilgisayarın Random Tuttuğu Sayıyı Tahmin Etmek -->
+<script>
+  document.querySelector('#title').innerHTML = "Bilgisayarın Random Tuttuğu Sayıyı Tahmin Etmek"
+ 
+
+  function tahminet(random, yakala, sonuc){
+
+    var random = Math.floor(Math.random() * 10);
+    var yakala = document.querySelector('#tahmin').value;
+    var sonuc = document.querySelector('#sonuc');
+
+    if (yakala == random && random!=null){
+      document.querySelector('#sonuc').style.color = "green"
+      console.log(sonuc.innerHTML = "Harika Doğru Tahmin Ettiniz! Bilgisayarın tuttuğu sayı: " + random)
+    }
+    else if(yakala === '' || yakala >= 10 || yakala === null){
+      console.log(sonuc.innerHTML = "Lütfen 0-9 arasında bir rakam giriniz!")
+    }
+    else if (yakala == null){
+      console.log(sonuc.innerHTML = "Giriş yapmaktan vaz geçtiniz!")
+    }
+    else{
+      document.querySelector('#sonuc').style.color = "red"
+      console.log(sonuc.innerHTML = "Yanlış Tahmin! Bilgisayarın tuttuğu sayı: " + random);
+      setTimeout(() => {  location.reload(); }, 2000);
+    }
+  }
+
+</script>
+</body>
+</html>

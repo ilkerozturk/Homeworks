@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="title"></title>
+</head>
+<body>
+  <p id="header"></p>
+  <p id='print'></p>
+
+  <script>
+    let title = document.querySelector('#title')
+      title.innerHTML = "Koşul yapıları - Switch";
+    let header = document.querySelector('#header')
+      header.innerHTML = "Koşul yapıları - Switch";
+    
+    let printt = document.querySelector('#print');
+
+      //SWITCH CASES
+
+      let isim = 'ezgi';
+      let i = isim;
+      
+      //includes() = içeriyor mu demek!!! boolean döner!!!
+      switch(true){
+        case 'abc'.includes(i[0]):
+        printt.innerHTML = "İsmin ilk harfi a,b,c"
+        break;
+        case 'def'.includes(i[0]):
+        printt.innerHTML = "İsmin ilk harfi d,e,f"
+        break;
+        default: 
+        printt.innerHTML = "Hata!"
+      }
+
+        
+
+
+
+      
+     
+  </script>
+</body>
+</html>

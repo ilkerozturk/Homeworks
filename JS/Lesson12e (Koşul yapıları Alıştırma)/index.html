@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+    <style> 
+      #main {
+        width: 400px;
+        height: 300px;
+        border: 0px solid #c3c3c3;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+      #main div.box1 {
+        width: 200px;
+        height: 100px;
+        text-align: center;
+        font-size: 24px;
+      }
+      #main div.box2 {
+        width: 200px;
+        height: 100px;
+        text-align: center;
+      }
+      #main div.box3 {
+        width: 400px;
+        height: 60px;
+        text-align: center;
+      }
+      #main div.box4 {
+        width: 400px;
+        height: 30px;
+        text-align: center;
+      }
+      h2{
+        text-align: center;
+        color: gray;
+      }
+      p{
+        margin-top: 38px;
+        margin-bottom: 38px;
+        color: rgb(87, 86, 86);
+      }
+      input{
+        margin-top: 42px;
+        margin-bottom: 42px;
+        color: rgb(87, 86, 86);
+      }
+      button{
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      #ortalamaGoster{
+        margin-top: 5px;
+        margin-bottom: 50px;
+      }
+      </style>
+
+</head>
+<body>
+
+
+  <h2>Not Ortalama Hesaplayıcı</h2>
+  <div id="main">
+    <div class="box1" style="background-color:rgb(233, 233, 233);">
+      <p>Vize Notunuz: </p>
+    </div>
+    <div class="box2" style="background-color:rgb(187, 188, 189);">
+      <input name="textbox1" type="text" id="vizenotu">
+    </div>
+    <div class="box1" style="background-color:rgb(187, 188, 189);">
+      <p>Final Notunuz: </p>
+    </div>
+    <div class="box2" style="background-color:rgb(233, 233, 233);">
+      <input name="textbox2" type="text" id="finalnotu">
+    </div>
+    <div class="box3" style="background-color:rgb(223, 223, 223);">
+      <button type="button" onclick=hesapla()>Hesapla</button>
+    </div>
+    <div class="box4" style="background-color:rgb(194, 194, 194);">
+      <p id="ortalamaGoster"></p>
+    </div>
+  
+  </div>
+
+<!--
+
+Öğrencinin vize notunun %30'unu final notunun %70'ini alalım.
+Vize ve final notunun toplamından doğan not ortalaması eğer 0-30 aralığındaysa KALDINIZ (FF) yazdıralım.
+31-49 aralığındaysa DC - KOŞULLU yazdıralım.
+50- 84 aralığındaysa CC - GEÇTİNİZ! yazdıralım.
+85-100 aralığındaysa Notunuz AA yazdıralım.
+--> 
+
+<!-- Koşul Yapıları if-Elseif ile Öğrenci Not Ortalaması Hesaplama -->
+<script>
+  document.getElementById('title').innerHTML = 'Öğrenci Not Ortalaması Hesaplama'
+
+  
+  function hesapla(){
+    //Değişlenler
+    var vizeNotu = Number(document.querySelector('#vizenotu').value);
+    var finalNotu = Number(document.querySelector('#finalnotu').value);
+    var ortalamaNotu = Number((vizeNotu * 0.30) + (finalNotu * 0.70));
+    var ortalama = document.getElementById('ortalamaGoster');
+    var fail = new Image();
+      fail= `<img src="./assets/ff.png" height = "18px"/>`;
+    var success = new Image();
+      success= `<img src="./assets/aa.png" height = "18px"/>`;
+
+    //Koşullar
+    if(ortalamaNotu>=0 && ortalamaNotu<=49){
+      console.log(ortalama.innerHTML= `<b>Ortalamanız: <span style="color:red;">${ortalamaNotu.toFixed(1)}</span></b><strong> Kaldınız! (FF)</strong>  ${fail}`)
+    }
+    else if(ortalamaNotu>50 && ortalamaNotu<59){
+      console.log(ortalama.innerHTML= `<b>Ortalamanız: <span style="color:red;">${ortalamaNotu.toFixed(1)}</span></b><strong> Kaldınız! (FD)</strong>  ${fail}`)
+    }
+    else if(ortalamaNotu>=60 && ortalamaNotu<=64){
+      console.log(ortalama.innerHTML= `<b>Ortalamanız: <span style="color:red;">${ortalamaNotu.toFixed(1)}</span></b><strong> Koşullu Geçer! (DD)</strong>  ${fail}`)
+    }
+    else if (ortalamaNotu>=65 && ortalamaNotu<=69){
+      console.log(ortalama.innerHTML= `<b>Ortalamanız: <span style="color:red;">${ortalamaNotu.toFixed(1)}</span></b><strong> Koşullu Geçer! (DC)</strong>  ${fail}`)
+    }
+    else if (ortalamaNotu>=70 && ortalamaNotu<=74){
+      console.log(ortalama.innerHTML= `<b>Ortalamanız: <span style="color:green;">${ortalamaNotu.toFixed(1)}</span></b><strong> Geçer! (CC)</strong>  ${success}`)
+    }
+    else if (ortalamaNotu>=75 && ortalamaNotu<=79){
+      console.log(ortalama.innerHTML= `<b>Ortalamanız: <span style="color:green;">${ortalamaNotu.toFixed(1)}</span></b><strong> Geçer! (CB)</strong>  ${success}`)
+    }
+    else if (ortalamaNotu>=80 && ortalamaNotu<=85){
+      console.log(ortalama.innerHTML= `<b>Ortalamanız: <span style="color:green;">${ortalamaNotu.toFixed(1)}</span></b><strong> Geçer! (BB)</strong>  ${success}`)
+    }
+    else if (ortalamaNotu>=85 && ortalamaNotu<=89){
+      console.log(ortalama.innerHTML= `<b>Ortalamanız: <span style="color:green;">${ortalamaNotu.toFixed(1)}</span></b><strong> Geçer! (BA)</strong>  ${success}`)
+    }
+    else if (ortalamaNotu>=90 && ortalamaNotu<=100){
+      console.log(ortalama.innerHTML= `<b>Ortalamanız: <span style="color:green;">${ortalamaNotu.toFixed(1)}</span></b><strong> Geçer! (AA)</strong>  ${success}`)
+    }
+    else{
+      document.getElementById('ortalamaGoster').style.color = 'red';
+      console.log(ortalama.innerHTML= "Lütfen girdiğiniz notları kontrol ediniz!");
+      setTimeout(() => {  location.reload(); }, 3000);
+      
+    }
+    
+  }
+
+
+</script>
+</body>
+</html>

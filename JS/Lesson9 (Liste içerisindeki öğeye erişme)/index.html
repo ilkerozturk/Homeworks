@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+</head>
+<body>
+    <h1 id="baslik"></h1>
+    
+    <ul class="liste">
+        <li>Lorem, ipsum.</li>
+        <li>Rem, saepe!</li>
+        <li>Laudantium, dolor.</li>
+        <li>Illum, ullam.</li>
+        <li>Officiis, autem.</li>
+        <li>Sed, eveniet.</li>
+    </ul>
+
+    <input type="text" id = "veri">
+    <button id="ekle">Listeye Öğe Ekle</button>
+
+
+<script>
+    let title = document.getElementById('title').innerHTML = 'Liste içerisindeki öğeye erişme';
+    let baslik = document.getElementById('baslik').innerHTML = "Liste içerisindeki öğeye erişme"
+
+    let liste = document.querySelector('ul');
+    let veri = document.querySelector('#veri')
+    let ekle = document.querySelector('#ekle')
+    
+    ekle.addEventListener('click', function(){
+    
+        //Create element ile yeni li ekleme
+        var li = document.createElement('li');
+        //Input ile gelen veriyi li içine ekeleme
+        
+        //appendChild ile elediğimiz veriyi liste değişkenine eklemek
+        liste.appendChild(li);
+        //Veri inputu içerisindeki veriyi siliyoruz
+        if (veri.value === '') {
+            return;
+        }
+        else{
+            li.textContent = veri.value;
+        }
+        
+    
+
+
+    });
+
+</script>
+
+</body>
+</html>
