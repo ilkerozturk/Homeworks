@@ -34,6 +34,7 @@ function addElement(){
     localStorage.setItem('click_count', clicks)
     taskfunction = () => {
         localStorage.setItem(`task${clicks}`,taskDOM.value)
+        taskDOM.value == taskDOM.value ? `${taskDOM.value=''}`: `${taskDOM.value=''}`
     }
     taskfunction();
   
