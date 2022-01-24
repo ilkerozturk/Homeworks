@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgeSA e-Letters</title>
+</head>
+
+<body style="margin-top: 50px; margin-left: auto; margin-right: auto; text-align: center;">
+    <span style="margin-right: auto; margin-left: auto;"><img src="https://www.btinteraktif.com/uploads/logo.png" alt=""></span>
+    <table  style="border: 0px solid white; margin-left: auto;margin-right: auto; margin-top: 30px;margin-bottom: auto; padding: 80px;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); background-color: #fca600;">
+        
+        <tbody>
+            <tr>
+                <th style="width: 170px;text-align: left; background-color: #292d74; color: white; padding: 10px;">
+                    Bülten Tipi:</th>
+                <td style="width: 650px; text-align: left; background-color: white; color: black; padding: 10px">
+                    {type}</td>
+            </tr>
+            <tr>
+                <th style="width: 170px;text-align: left; background-color: #292d74; color: white; padding: 10px;">
+                    Çalışmanın Etkisi:</th>
+                <td style="width: 650px; text-align: left; background-color: white; color: black; padding: 10px">
+                    {$RECORD.impact}</td>
+            </tr>
+            <tr>
+                <th style="width: 170px;text-align: left; background-color: #292d74; color: white; padding: 10px;">
+                    Başlangıç Zamanı:</th>
+                <td style="width: 650px; text-align: left; background-color: white; color: black; padding: 10px">
+                    {$RECORD.start_date}
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 170px;text-align: left; background-color: #292d74; color: white; padding: 10px;">
+                    Bitiş Zamanı:</th>
+                <td style="width: 650px; text-align: left; background-color: white; color: black; padding: 10px">
+                    {$RECORD.end_date}</td>
+            </tr>
+            <tr>
+                <th style="width: 170px;text-align: left; background-color: #292d74; color: white; padding: 10px;">
+                    Çalışmayı Yapan:</th>
+                <td style="width: 650px; text-align: left; background-color: white; color: black; padding: 10px">
+                    {$RECORD.assignee}</td>
+            </tr>
+            <tr>
+                <th style="width: 170px;text-align: left; background-color: #292d74; color: white; padding: 10px;">
+                    Etkilenen Müşteri:</th>
+                <td style="width: 650px; text-align: left; background-color: white; color: black; padding: 10px">
+                    {$RECORD.customer}</td>
+            </tr>
+            <tr>
+                <th style="width: 170px;text-align: left; background-color: #292d74; color: white; padding: 10px;">
+                    Servis Adı:</th>
+                <td style="width: 650px; text-align: left; background-color: white; color: black; padding: 10px">
+                    {$RECORD.service}</td>
+            </tr>
+            <tr>
+                <th style="width: 170px;text-align: left; background-color: #292d74; color: white; padding: 10px;">
+                    Bülten Numarası:</th>
+                <td style="width: 650px; text-align: left; background-color: white; color: black; padding: 10px">
+                    {$RECORD.bulletin_no}
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 170px;text-align: left; background-color: #292d74; color: white; padding: 10px;">
+                    Durum:</th>
+                <td style="width: 650px; text-align: left; background-color: white; color: black; padding: 10px">
+                    {status}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>
