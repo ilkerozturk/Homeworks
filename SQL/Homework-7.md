@@ -29,7 +29,7 @@ __SQL QUERY :__ SELECT Store_id, COUNT(Customer_id) FROM Customer GROUP BY Store
 
 ### city tablosunda bulunan şehir verilerini country_id sütununa göre gruplandırdıktan sonra en fazla şehir sayısı barındıran country_id bilgisini ve şehir sayısını paylaşınız.
 
-<code> SELECT country_id, COUNT(CITY) FROM City GROUP BY country_id ORDER BY COUNT(CITY) DESC; <code>
+<code> SELECT country_id, COUNT(CITY) FROM City GROUP BY country_id ORDER BY COUNT(CITY) DESC; </code>
 
 
 
