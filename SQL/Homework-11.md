@@ -47,13 +47,13 @@ EXCEPT
 UNION ALL
 (SELECT first_name FROM CUSTOMER)
 </code>
-
+---
 <code> 
 (SELECT first_name FROM ACTOR)
 INTERSECT ALL
 (SELECT first_name FROM CUSTOMER)
 </code>
-
+---
 <code> 
 (SELECT first_name FROM ACTOR)
 EXCEPT ALL
