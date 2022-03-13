@@ -10,16 +10,16 @@ const printList = () => {
         console.log(value)
     })
 }
-const addnewitem = { name: 'Blog5', content: 'lorem5 lorem5 lorem5', author: 'Muhsin Buldu' };
+const addnewitem = {name: 'Blog 5', content: 'lorem5 lorem5 lorem5', author: 'Eren Buldu'};
 
 const updatelist = (value) => {
     return new Promise((resolve, reject) => {
-        if (value) {
+        if (value !== null && value !== '') {
             blogList.push(value);
             resolve('Yeni item başarıyla listeye eklendi!');
         }
         else {
-            reject('Yeni item yok ya da eklenemedi!')
+            reject('Yeni item yok ya da eklenemedi!');
         }
     })
 }
@@ -27,10 +27,11 @@ const updatelist = (value) => {
 async function proceedlist() {
     try {
         if (addnewitem !== null && addnewitem !== '') {
-            await updatelist(addnewitem).then(() => { return printList(); }).catch((err) => { console.log(err) });
-
+            await updatelist(addnewitem).then(value => {console.log(value)}).catch(error => {console.log(error)});;
+            printList()
             console.log(`Güncel Liste = ${blogList.length}'adettir.`);
         } else {
+            await updatelist(addnewitem).then(value => {console.log(value)}).catch(error => {console.log(error)});;
             printList();
             console.log(`Güncel Liste = ${blogList.length}'adettir.`);
         }
