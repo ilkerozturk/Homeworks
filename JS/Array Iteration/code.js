@@ -28,3 +28,9 @@ function myFunction(value) {
 }
 
 console.log(newNumbers);
+
+//Math.max() method dizideki ya da argüman olarak verilen değerin en büyüğünü bulur
+
+let maxNumber = [1,6,9,3,2];
+
+document.querySelector('#txt').innerHTML= ;

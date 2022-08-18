@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try & Catch Example</title>
+</head>
+
+<body>
+
+
+    <h2>JavaScript Object.defineProperty()</h2>
+
+    <p>This example adds a new property to an object.</p>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <script>
+
+        class Car {
+            constructor (name, year) {
+                this.name = name;
+                this.year = year;
+            }
+                age(){
+                    let cryear = new Date();
+                    let age = cryear.getFullYear() - this.year; 
+                    return age;
+                };
+        };
+
+
+        let myCar = new Car("Volkswagen", 2015);
+
+        document.querySelector('#demo').innerHTML = `My car's brand is  ${myCar.name}  model year  ${myCar.year}  and age is  ${myCar.age()}`;
+
+    </script>
+
+</body>
+
+</html>
