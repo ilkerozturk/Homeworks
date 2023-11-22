@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT Entegrasyonu</title>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-log"></div>
+        <input type="text" id="user-input">
+        <button onclick="sendMessage()">Gönder</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Chat logunu ve kullanıcının girdiği mesajları takip etmek için değişkenleri tanımlayalım
+        var chatLog = document.getElementById("chat-log");
+        var userInput = document.getElementById("user-input");
+
+        function sendMessage() {
+            var message = userInput.value;
+            displayMessage("Kullanıcı: " + message);
+
+            // OpenAI API'sine istek gönderelim
+            axios.post('https://api.openai.com/v1/chat/completions', {
+                'model': 'text-davinci-003',
+                'messages': [
+                    {
+                        'role': 'system',
+                        'content': 'Kullanıcı, ChatGPT ile sohbet ediyor.'
+                    },
+                    {
+                        'role': 'user',
+                        'content': message
+                    }
+                ]
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer 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' // API anahtarınızı buraya ekleyin
+                }
+            })
+            .then(function (response) {
+                var botReply = response.data.choices[0].message.content;
+                displayMessage("ChatGPT: " + botReply);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+            userInput.value = '';
+        }
+
+        function displayMessage(message) {
+            var messageElement = document.createElement("div");
+            messageElement.textContent = message;
+            chatLog.appendChild(messageElement);
+        }
+    </script>
+</body>
+</html>
